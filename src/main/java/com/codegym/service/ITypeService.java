@@ -1,6 +1,6 @@
 package com.codegym.service;
 
-import com.practicecrud.model.Type;
+import com.codegym.model.Type;
 
 public interface ITypeService extends IGenerateService<Type>{
 }

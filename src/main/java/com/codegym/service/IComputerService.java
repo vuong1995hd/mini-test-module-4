@@ -1,7 +1,7 @@
 package com.codegym.service;
 
-import com.practicecrud.model.Computer;
-import com.practicecrud.model.Type;
+import com.codegym.model.Computer;
+import com.codegym.model.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

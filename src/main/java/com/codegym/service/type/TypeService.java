@@ -1,8 +1,8 @@
 package com.codegym.service.type;
 
-import com.practicecrud.model.Type;
-import com.practicecrud.repository.ITypeRepository;
-import com.practicecrud.service.ITypeService;
+import com.codegym.model.Type;
+import com.codegym.repository.ITypeRepository;
+import com.codegym.service.ITypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
