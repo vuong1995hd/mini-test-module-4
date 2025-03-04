@@ -1,9 +1,9 @@
 package com.codegym.controller;
 
-import com.practicecrud.model.Computer;
-import com.practicecrud.model.Type;
-import com.practicecrud.service.IComputerService;
-import com.practicecrud.service.ITypeService;
+import com.codegym.model.Computer;
+import com.codegym.model.Type;
+import com.codegym.service.IComputerService;
+import com.codegym.service.ITypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

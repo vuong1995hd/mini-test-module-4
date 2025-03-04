@@ -32,8 +32,8 @@ import java.util.Properties;
 @EnableWebMvc
 @EnableTransactionManagement
 @EnableSpringDataWebSupport
-@ComponentScan(basePackages = "com.practicecrud")
-@EnableJpaRepositories("com.practicecrud.repository")
+@ComponentScan(basePackages = "com.codegym")
+@EnableJpaRepositories("com.codegym.repository")
 public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
     private ApplicationContext applicationContext;
 
