@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>List Computer</title>
+</head>
+<body>
+<h3>Computers</h3>
+<p>
+    <a th:href="@{/computer/create}">
+        Add new computer
+    </a>
+</p>
+<p>
+    <a th:href="@{/type}">
+        Types
+    </a>
+</p>
+<div style="margin-bottom: 10px; margin-left: 110px">
+    <form th:action="@{/computer/search}" method="get">
+        <label><input type="text" name="search"></label>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+<div class="notify">
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+
+<table id = "computers">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Producer</th>
+        <th>Type</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c,cStatus : ${computers}">
+        <td th:text="${cStatus.index + 1}"></td>
+        <td th:text="${c.getCode()}"></td>
+        <td th:text="${c.getName()}"></td>
+        <td th:text="${c.getProducer()}"></td>
+        <td th:text="${c.getComputerType() != null ? c.getComputerType().getName() : 'No Type'}"></td>
+        <td><a th:href="@{/computer/update/{id}(id=${c.getId()})}">update</a></td>
+        <td><a th:href="@{/computer/delete/{id}(id=${c.getId()})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<a class="btn btn-primary" th:if="${computers.hasPrevious()}"
+   th:href="@{/computer(search=${search}, page=${computers.number - 1}, size=${computers.size})}">Previous</a>
+<span th:text="${customers.number + 1}"></span> | <span th:text="${computers.totalPages}"></span>
+<a class="btn btn-primary" th:if="${computers.hasNext()}"
+   th:href="@{/computer(search=${search}, page=${computers.number + 1}, size=${computers.size})}">Next</a>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

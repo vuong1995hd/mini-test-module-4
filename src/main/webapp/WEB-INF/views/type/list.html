@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>List computerType</title>
+</head>
+<body>
+<h3>computerType</h3>
+<p>
+    <a th:href="@{/type/create}">
+        Add new computerType
+    </a>
+</p>
+<p>
+    <a th:href="@{/computer}">
+        Computers
+    </a>
+</p>
+<div class="notify">
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+
+<table id = "customers">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p, pStatus : ${types}">
+        <td th:text="${pStatus.count}"></td>
+        <td><a th:href="@{/type/view-type/{id}(id=${p.getId()})}" th:text="${p.getName()}"></a></td>
+        <td><a th:href="@{/type/update/{id}(id=${p.getId()})}">update</a></td>
+        <td><a th:href="@{/type/delete/{id}(id=${p.getId()})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
