@@ -61,7 +61,7 @@ public class ComputerController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute("computers") Computer computer,
-                            RedirectAttributes redirectAttributes) {
+                         RedirectAttributes redirectAttributes) {
         computerService.save(computer);
         redirectAttributes.addFlashAttribute("message", "Create new customer successfully");
         return "redirect:/computer";
@@ -80,7 +80,7 @@ public class ComputerController {
     }
     @PostMapping("/update/{id}")
     public String updateComputer( @ModelAttribute("computers") Computer computer,
-                             RedirectAttributes redirectAttributes) {
+                                  RedirectAttributes redirectAttributes) {
         computerService.save(computer);
         redirectAttributes.addFlashAttribute("message", "Update customer successfully");
         return "redirect:/computer";

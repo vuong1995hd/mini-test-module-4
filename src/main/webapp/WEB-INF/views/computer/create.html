@@ -29,7 +29,7 @@
         <div>
             <label for="type">Type</label>
             <select id="type" th:field="*{computerType}">
-                <option th:each="c : ${computerType}" th:value="${c.id}" th:text="${c.name}"></option>
+                <option th:each="c : ${types}" th:value="${c.id}" th:text="${c.name}"></option>
             </select>
         </div>
         <input type="submit" value="Save"/>
