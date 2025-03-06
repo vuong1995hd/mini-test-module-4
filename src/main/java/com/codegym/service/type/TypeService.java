@@ -1,5 +1,7 @@
 package com.codegym.service.type;
 
+
+import com.codegym.model.DTO.TypeDTO;
 import com.codegym.model.Type;
 import com.codegym.repository.ITypeRepository;
 import com.codegym.service.ITypeService;
@@ -20,9 +22,8 @@ public class TypeService implements ITypeService {
     }
 
     @Override
-    public void save(Type type) {
-        typeRepository.save(type);
-
+    public Type save(Type type) {
+        return typeRepository.save(type);
     }
 
     @Override
@@ -33,5 +34,10 @@ public class TypeService implements ITypeService {
     @Override
     public void remove(Long id) {
         typeRepository.deleteTypeById(id);
+    }
+
+    @Override
+    public Iterable<TypeDTO> getType() {
+        return typeRepository.getType();
     }
 }

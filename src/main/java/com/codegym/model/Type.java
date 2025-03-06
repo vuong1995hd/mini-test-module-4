@@ -4,7 +4,7 @@ package com.codegym.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "type")
+@Table(name = "computerType")
 public class Type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

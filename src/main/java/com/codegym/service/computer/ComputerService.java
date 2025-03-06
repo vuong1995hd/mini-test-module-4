@@ -1,5 +1,6 @@
 package com.codegym.service.computer;
 
+
 import com.codegym.model.Computer;
 import com.codegym.model.Type;
 import com.codegym.repository.IComputerRepository;
@@ -24,8 +25,8 @@ public class ComputerService implements IComputerService {
     }
 
     @Override
-    public void save(Computer computer) {
-        computerRepository.save(computer);
+    public Computer save(Computer computer) {
+        return computerRepository.save(computer);
 
     }
 
